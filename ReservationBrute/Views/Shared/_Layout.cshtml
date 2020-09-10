@@ -1,11 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using ReservationBrute.Areas.Identity.Data
-@inject SignInManager<ReservationBruteUser> SignInManager
-@inject UserManager<ReservationBruteUser> UserManager
-@{
-    var user = await UserManager.GetUserAsync(User);
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,11 +7,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+
+<body style='background: #000'>
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand">Reservation Brute</a>
+                <a class="navbar-brand">ReservationBrute</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,17 +25,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Booking">Bookings</a>
                         </li>
 
-
-                        @if (SignInManager.IsSignedIn(User) && user.Role == "Admin")
-                        {
-                                    
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservations" asp-action="Index">Reservation</a>
-                            </li>
-                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
                 <partial name="_LoginPartial" />
@@ -52,7 +43,18 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer >
+        <style>
+            #footer {
+                position: fixed;
+                padding: 10px 10px 0px 10px;
+                bottom: 0;
+                width: 100%;
+                /* Height of the footer*/
+                height: 40px;
+                background: grey;
+            }
+        </style>
         <div class="container">
             &copy; 2020 - ReservationBrute
         </div>
