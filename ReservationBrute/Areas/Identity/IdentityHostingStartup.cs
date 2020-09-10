@@ -18,7 +18,7 @@ namespace ReservationBrute.Areas.Identity
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<ReservationBruteContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("ReservationBruteAdmin")));
+                        context.Configuration.GetConnectionString("ReservationBruteContextConnection")));
 
                 services.AddDefaultIdentity<ReservationBruteUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<ReservationBruteContext>();

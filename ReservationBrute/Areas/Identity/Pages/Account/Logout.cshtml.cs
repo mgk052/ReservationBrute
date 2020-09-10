@@ -33,7 +33,7 @@ namespace ReservationBrute.Areas.Identity.Pages.Account
             _logger.LogInformation("User logged out.");
             if (returnUrl != null)
             {
-                return LocalRedirect("~/Home/About");
+                return LocalRedirect(returnUrl);
             }
             else
             {

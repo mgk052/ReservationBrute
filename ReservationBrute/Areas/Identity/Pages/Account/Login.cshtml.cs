@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using ReservationBrute.Areas.Identity.Data;
 
+
 namespace ReservationBrute.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
@@ -83,16 +84,8 @@ namespace ReservationBrute.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    var user = await _userManager.FindByEmailAsync(Input.Email);
-                    var role = user.Role;
-                    if (role == "Admin")
-                    {
-                        return Redirect("~/Reservations/Index");
-                    }
-                    else
-                    {
-                        return LocalRedirect(returnUrl);
-                    }
+                    _logger.LogInformation("User logged in.");
+                    return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {

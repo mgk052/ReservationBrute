@@ -9,6 +9,5 @@ namespace ReservationBrute.Areas.Identity.Data
     // Add profile data for application users by adding properties to the ReservationBruteUser class
     public class ReservationBruteUser : IdentityUser
     {
-        public string Role { get; internal set; }
     }
 }
