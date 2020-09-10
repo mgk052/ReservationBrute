@@ -10,8 +10,8 @@ namespace ReservationBrute.Models
         public int ID { get; set; }
         public string location { get; set; }
         public int seatNo { get; set; }
-        public DateTime Time { get; set; }
-        public DateTime Date { get; set; }
+       // public DateTime Time { get; set; }
+       // public DateTime Date { get; set; }
 
     }
 }

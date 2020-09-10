@@ -54,7 +54,7 @@ namespace ReservationBrute.Views.Admin
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,location,seatNo,Time,Date")] Reservations reservations)
+        public async Task<IActionResult> Create([Bind("ID,location,seatNo")] Reservations reservations)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ReservationBrute.Views.Admin
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,location,seatNo,Time,Date")] Reservations reservations)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,location,seatNo")] Reservations reservations)
         {
             if (id != reservations.ID)
             {
