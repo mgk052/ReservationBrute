@@ -1,0 +1,41 @@
+﻿@model ReservationBrute.Models.TableBooking
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TableBooking</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.location)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.booked_seats)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.booked_seats)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.booking_no)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.booking_no)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date_time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_time)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

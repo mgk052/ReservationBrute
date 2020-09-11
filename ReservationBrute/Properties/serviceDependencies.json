@@ -7,6 +7,10 @@
     "mssql2": {
       "type": "mssql",
       "connectionId": "ReservationBruteAdmin"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ReservationBruteTable"
     }
   }
 }
